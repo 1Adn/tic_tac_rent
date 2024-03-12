@@ -8,11 +8,13 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
   # Defines the root path route ("/")
   # root "posts#index"
-  
+
     # =========== USER ROUTES ===============
-  resources :users
-  
-  
+  resources :users do
+    resources :watches, only: :create
+  end
+
+
 # =========== BOOKINGS ROUTES ===============
   resources :bookings do
     member do
@@ -23,15 +25,5 @@ Rails.application.routes.draw do
 
 
  # =========== WATCH ROUTES ===============
-  get "/watches" => "watches#index"
-
-  get "/watches/new" => "watches#new"
-  post "/watches" => "watches#create"
-
-  get "/watches/:id/edit" => "watches#edit"
-  patch "/watches/:id" => "watches#update"
-
-  delete "/watches/:id" => "watches#destroy"
-
-  get "/watches/:id" => "watches#show"
-  end
+ resources :watches
+end

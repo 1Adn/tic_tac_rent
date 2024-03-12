@@ -19,9 +19,9 @@ puts 'Users seed Created ! (: '
 # Création de quelques montres appartenant à user1
 Watch.destroy_all
 puts 'Creating Watches Seeds...'
-watch1 = Watch.create(name: 'Rolex Submariner', price: 15000, brand: 'Rolex', model: 'Submariner', description: 'Luxury diving watch', movement_type: 'Automatic', gender: 'Men', status: 'Available', user: user1)
-watch2 = Watch.create(name: 'Omega Speedmaster', price: 12000, brand: 'Omega', model: 'Speedmaster', description: 'Iconic chronograph watch', movement_type: 'Manual', gender: 'Woman', status: 'Available', user: user2)
-watch3 = Watch.create(name: 'Hublot Big Bang', price: 46000, brand: 'Hublot', model: 'Big Bang', description: 'Amazing watch', movement_type: 'Manual', gender: 'Kid', status: 'Available', user: user3)
+watch1 = Watch.create(name: 'Rolex Submariner', price: 15000, brand: 'Rolex', model: 'Submariner', description: 'Luxury diving watch', movement_type: 'Automatic', gender: 'Men', status: 'Available', user: user1, image_url: "https://timekeeping.fr/cdn/shop/products/image_356e963a-0f3b-4223-a0f0-027c9dee3dc3_300x300.jpg?v=1647356887")
+watch2 = Watch.create(name: 'Omega Speedmaster', price: 12000, brand: 'Omega', model: 'Speedmaster', description: 'Iconic chronograph watch', movement_type: 'Manual', gender: 'Woman', status: 'Available', user: user2, image_url: "https://magazine.chrono24.com/cdn-cgi/image/f=auto,metadata=none,fit=cover,q=65,w=1190,h=595,dpr=2.0/2022/08/Omega-Speedmaster-6-Things-Magazin-2-1.jpg")
+watch3 = Watch.create(name: 'Hublot Big Bang', price: 46000, brand: 'Hublot', model: 'Big Bang', description: 'Amazing watch', movement_type: 'Manual', gender: 'Kid', status: 'Available', user: user3, image_url: "https://alheuredemilie.com/wp-content/uploads/2023/03/DSC_1447-scaled-e1679494829290.jpg")
 puts 'Watches seed Created !(: '
 
 # Création de quelques réservations par user2
