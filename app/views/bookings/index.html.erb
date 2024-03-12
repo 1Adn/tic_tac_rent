@@ -1,0 +1,32 @@
+<h1>Liste des réservations</h1>
+
+<%= link_to 'Créer une nouvelle réservation', new_booking_path, class: 'btn btn-primary' %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Date de début</th>
+      <th>Date de fin</th>
+      <th>Statut</th>
+      <th>Montre</th>
+      <th>Locataire</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.starting_date %></td>
+        <td><%= booking.ending_date %></td>
+        <td><%= booking.status %></td>
+        <td><%= booking.watch.name %></td>
+        <td><%= booking.user.username %></td>
+        <td>
+          <%= link_to 'Voir', booking, class: 'btn btn-info' %>
+          <%= link_to 'Modifier', edit_booking_path(booking), class: 'btn btn-warning' %>
+          <%= link_to 'Supprimer', booking, method: :delete, data: { confirm: 'Êtes-vous sûr ?' }, class: 'btn btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
