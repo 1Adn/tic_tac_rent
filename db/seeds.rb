@@ -9,13 +9,26 @@
 #   end
 
 # Création de quelques utilisateurs
-user1 = User.create(username: 'luxurywatcher1', email: 'test1@example.com', password: 'password1')
-user2 = User.create(username: 'luxurywatcher2', email: 'test2@example.com', password: 'password2')
+User.destroy_all
+puts 'Creating Users Seeds...'
+user1 = User.create(username: 'Jean', email: 'jean@example.com', password: 'password1')
+user2 = User.create(username: 'Lucas', email: 'lucas@example.com', password: 'password2')
+user3 = User.create(username: 'Zoé', email: 'zoe@example.com', password: 'password3')
+puts 'Users seed Created ! (: '
 
 # Création de quelques montres appartenant à user1
-watch1 = Watch.create(name: 'Rolex Submariner', price: 15000, brand: 'Rolex', model: 'Submariner', description: 'Luxury diving watch', movement_type: 'Automatic', gender: 'Men', status: 'Available', owner: user1)
-watch2 = Watch.create(name: 'Omega Speedmaster', price: 12000, brand: 'Omega', model: 'Speedmaster', description: 'Iconic chronograph watch', movement_type: 'Manual', gender: 'Men', status: 'Available', owner: user1)
+Watch.destroy_all
+puts 'Creating Watches Seeds...'
+watch1 = Watch.create(name: 'Rolex Submariner', price: 15000, brand: 'Rolex', model: 'Submariner', description: 'Luxury diving watch', movement_type: 'Automatic', gender: 'Men', status: 'Available', user: user1)
+watch2 = Watch.create(name: 'Omega Speedmaster', price: 12000, brand: 'Omega', model: 'Speedmaster', description: 'Iconic chronograph watch', movement_type: 'Manual', gender: 'Woman', status: 'Available', user: user2)
+watch3 = Watch.create(name: 'Hublot Big Bang', price: 46000, brand: 'Hublot', model: 'Big Bang', description: 'Amazing watch', movement_type: 'Manual', gender: 'Kid', status: 'Available', user: user3)
+puts 'Watches seed Created !(: '
 
 # Création de quelques réservations par user2
-booking1 = Booking.create(starting_date: Date.today, ending_date: Date.today + 7, status: 'Pending', renter: user2, watch: watch1)
-booking2 = Booking.create(starting_date: Date.today + 8, ending_date: Date.today + 15, status: 'Pending', renter: user2, watch: watch2)
+Booking.destroy_all
+puts 'Creating Bookings Seeds...'
+booking1 = Booking.create(starting_date: Date.today, ending_date: Date.today + 7, status: 'Pending', user: user1, watch: watch1)
+booking2 = Booking.create(starting_date: Date.today + 8, ending_date: Date.today + 15, status: 'Pending', user: user1, watch: watch2)
+booking3 = Booking.create(starting_date: Date.today + 21, ending_date: Date.today + 25, status: 'Pending', user: user2, watch: watch1)
+booking4 = Booking.create(starting_date: Date.today + 30, ending_date: Date.today + 40, status: 'Pending', user: user3, watch: watch3)
+puts 'Bookings Created ! (: '
