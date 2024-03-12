@@ -1,0 +1,12 @@
+<h1>Post your Watch :</h1>
+<%= simple_form_for(@watch) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :price %>
+  <%= f.input :brand %>
+  <%= f.input :model %>
+  <%= f.input :description %>
+  <%= f.input :movement_type, as: :select, collection: ["Manual", "Automatic"]  %>
+  <%= f.input :gender, as: :select, collection: ["Woman", "Men", "Kid"] %>
+  <%= f.submit %>
+<% end %>
+<div><%= link_to "<- Back", watches_path %> </div>
