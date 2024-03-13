@@ -1,6 +1,6 @@
 class WatchesController < ApplicationController
-  skip_before_action only: :index
-  
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     @watches = Watch.all
   end

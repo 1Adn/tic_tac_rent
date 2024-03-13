@@ -7,10 +7,13 @@
   <%= csp_meta_tag %>
 </head>
 <body>
+<div class="announcement-bar">
+  Discover elegance on your wrist - Rent a luxury watch now!
+</div>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <!-- Liens en haut à gauche -->
-    <%= link_to 'Offer Your Watch', new_booking_path, class: 'offer-watch-link position-absolute top-0 start-0 ms-5 mt-2' %>
+    <%= link_to 'Offer Your Watch', new_watch_path, class: 'offer-watch-link position-absolute top-0 start-0 ms-5 mt-2' %>
     <!-- Logo au centre -->
     <div class="mx-auto my-2">
       <%= link_to root_path do %>
@@ -24,8 +27,8 @@
     </div>
     <!-- Liens en haut à droite -->
     <div class="nav-link position-absolute top-0 end-0 me-5 mt-2">
-      <%= link_to 'Sign In', new_session_path(:user), class: 'nav-link' %>
-      <%= link_to 'Sign Up', new_registration_path(:user), class: 'nav-link' %>
+      <%= link_to 'Sign In', user_session_path, class: 'nav-link' %>
+      <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %>
     </div>
     <!-- Barre de recherche et panier en bas -->
     <div class="search-container position-absolute bottom-0 start-0 mb-3 ms-5">
@@ -41,13 +44,15 @@
 </nav>
 
   <!-- Contenu principal -->
-  <div class="main-content">
-    <div class="container">
-      <h1>Discover Luxury Experience with Tic Tac Rent</h1>
-      <p>At Tic Tac Rent, we believe luxury should be accessible to everyone, anytime...</p>
-      <%= link_to 'Discover', "discover_path", class: "btn btn-primary" %>
-    </div>
+  <div class="banner-image">
+  <div class="container-bannner text-center">
+    <h2>Discover Luxury Experience with Tic Tac Rent</h2>
+    <p>At Tic Tac Rent, we believe luxury should be accessible to everyone, anytime. Founded by three young visionaries, our company is on a mission to reinvent how you perceive and enjoy luxury watches.</p>
+    <h2>Luxury on Demand</h2>
+    <p>Imagine having access to an exclusive collection of luxury watches, right at your fingertips, without the need for a long-term commitment. With Tic Tac Rent, it's now possible. Our platform gives you the freedom to rent renowned watches for special occasions or simply to elevate your everyday style.</p>
+    <%= link_to 'Discover', "#", class: "btn btn-primary mt-3" %>
   </div>
+</div>
 
   <!-- Pied de page -->
   <footer class="footer bg-dark text-light">
