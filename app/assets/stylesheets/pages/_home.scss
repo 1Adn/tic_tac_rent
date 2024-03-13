@@ -26,6 +26,29 @@
   height: auto; // maintient le ratio de l'image
 }
 
-.logo-container img {
+.announcement-bar {
+  background-color: #333; // Couleur de fond sombre pour la barre d'annonce
+  color: #fff; // Texte en blanc pour contraster avec le fond sombre
+  text-align: center; // Centre le texte dans la barre d'annonce
+  padding: 0.5rem 1rem; // Ajoute de l'espace autour du texte
+  font-size: 0.875rem; // Petite taille de police pour une barre d'annonce discrète
+}
 
+.banner-image {
+  background: url('banner-home-page.png') no-repeat center center/cover;
+  padding: 100px 0; // Ajustez selon l'espacement souhaité
+  color: white; // Ou toute autre couleur selon votre design
+}
+
+.container-banner h2,
+.container-banner p {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); // Ajoute une ombre noire pour augmenter le contraste
+}
+
+.container-banner {
+  background-color: rgba(0, 0, 0, 1); // Ajoute un fond noir semi-transparent
+  display: inline-block; // Permet au conteneur de s'adapter au contenu
+  padding: 20px; // Un peu d'espacement autour du texte
+  border-radius: 10px; // Des bords arrondis pour l'esthétique
+  margin: auto; // Centrer le bloc dans la bannière
 }
