@@ -1,1 +1,31 @@
 // Specific CSS for your home-page
+.nav-link-container {
+  display: flex;
+  justify-content: center;
+  gap: 100px; /* Ajustez l'espace entre les liens comme désiré */
+  margin-top: -10px; /* Ajuster selon la position souhaitée par rapport au logo */
+}
+
+.search-container {
+  padding-bottom: 1rem; /* Espace entre la barre de recherche et le bord inférieur de la navbar */
+}
+
+.offer-watch-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 1rem;
+}
+
+/* Stylisation et positionnement du container de logo */
+.logo-container {
+  text-align: center;
+  position: relative;
+  padding-top: 1rem;
+  max-width: 150px; // ou la taille que vous désirez
+  height: auto; // maintient le ratio de l'image
+}
+
+.logo-container img {
+
+}
