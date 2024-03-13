@@ -10,12 +10,11 @@ class WatchesController < ApplicationController
   def create
     @watch = Watch.new(params_watch)
     @watch.user_id = current_user.id
-    # if @watch.save!
-    #   redirect_to @watch
-    # else
-    #   render :new, status: :unprocessable_entity
-    # end
-    @watch.save!
+    if @watch.save
+      redirect_to @watch
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def show
