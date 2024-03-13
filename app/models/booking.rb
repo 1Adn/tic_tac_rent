@@ -2,7 +2,7 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :watch
 
-  validates :starting_date, :ending_date, :status, presence: true
+  validates :starting_date, :ending_date, presence: true
   validate :ending_date_after_starting_date
   validates :status, inclusion: { in: ['Pending', 'Accepted', 'Declined'] }
 

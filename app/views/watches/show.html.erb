@@ -14,5 +14,5 @@
 <p><%= @watch.movement_type %></p>
 <h3>Gender :</h3>
 <p><%= @watch.gender %></p>
-<div><%= link_to "Book this watch !", new_booking_path %> </div>
+<div><%= link_to "Book this watch !", new_watch_booking_path(@watch) %> </div>
 <div><%= link_to "<- Back", watches_path %> </div>

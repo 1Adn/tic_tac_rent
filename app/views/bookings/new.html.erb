@@ -1,5 +1,6 @@
-<h1>New Reservation</h1>
-
-<%= render 'form', booking: @booking %>
-
-<%= link_to 'Back to List', bookings_path %>
+<h1>Create your reservation for <%= @watch.name%></h1>
+<%= simple_form_for([@watch, @booking]) do |f| %>
+  <%= f.input :starting_date %>
+  <%= f.input :ending_date %>
+  <%= f.submit %>
+<% end %>

@@ -11,14 +11,20 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    @watch = Watch.find(params[:watch_id])
   end
 
   def create
+    @watch = Watch.find(params[:watch_id])
+    @user = current_user
     @booking = Booking.new(booking_params)
+    @booking.watch = @watch
+    @booking.user = @user
+    @booking.status = "Pending"
     if @booking.save
-      redirect_to @booking, notice: 'Booking was successfully created.'
+      redirect_to watch_path(@watch), notice: 'Booking was successfully created.'
     else
-      render :new
+      render :new, status: unprocessable_entity
     end
   end
 
@@ -56,6 +62,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:starting_date, :ending_date, :status, :user_id, :watch_id)
+    params.require(:booking).permit(:starting_date, :ending_date)
   end
 end

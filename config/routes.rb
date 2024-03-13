@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   # =========== USER ROUTES ===============
   resources :users
   # =========== BOOKINGS ROUTES ===============
-  resources :bookings do
+  resources :bookings, except: [:new, :create] do
     member do
       patch :accept
       patch :decline
