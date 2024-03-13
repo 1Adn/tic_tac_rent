@@ -1,6 +1,9 @@
 <h1>list of all the Watches :</h1>
 <ul>
   <% @watches.each do |watch| %>
-    <li><%= watch.name %></li>
+    <li> <%= link_to watch.name, watch_path(watch) %></li>
   <% end %>
 </ul>
+<%= link_to new_watch_path(@watch), data: { turbo_confirm: "If you are not log in, you'll be redirected to the login page" } do %>
+  <div>You too post your watch !</div>
+<% end %>

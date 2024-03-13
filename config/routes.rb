@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   # root "posts#index"
 
 # =========== USER ROUTES ===============
-  resources :users
+  resources :users do
+    resources :watches, only: :create
+  end
 
 
 # =========== BOOKINGS ROUTES ===============
@@ -22,16 +24,8 @@ Rails.application.routes.draw do
   end
 
 
-# =========== WATCH ROUTES ===============
-  get "/watches" => "watches#index"
 
-  get "/watches/new" => "watches#new"
-  post "/watches" => "watches#create"
+ # =========== WATCH ROUTES ===============
+ resources :watches
+end
 
-  get "/watches/:id/edit" => "watches#edit"
-  patch "/watches/:id" => "watches#update"
-
-  delete "/watches/:id" => "watches#destroy"
-
-  get "/watches/:id" => "watches#show"
-  end
