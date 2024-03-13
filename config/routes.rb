@@ -9,23 +9,19 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-# =========== USER ROUTES ===============
-  resources :users do
-    resources :watches, only: :create
-  end
-
-
-# =========== BOOKINGS ROUTES ===============
+  # =========== USER ROUTES ===============
+  resources :users
+  # =========== BOOKINGS ROUTES ===============
   resources :bookings do
     member do
       patch :accept
       patch :decline
     end
   end
-
-
-
- # =========== WATCH ROUTES ===============
- resources :watches
+  # =========== WATCH ROUTES ===============
+  resources :watches do
+    resources :bookings, only: [:new, :create]
+  end
+  # =========== DASHBOARD ROUTES ===============
+  get "/user/dashboard" => "pages#dashboard"
 end
-
