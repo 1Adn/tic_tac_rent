@@ -14,5 +14,7 @@
     <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+
+    <%= link_to "log_out", destroy_user_session_path, turbo_method: :delete %>
   </body>
 </html>
