@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-    # =========== USER ROUTES ===============
+# =========== USER ROUTES ===============
   resources :users do
     resources :watches, only: :create
   end
@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   end
 
 
+
  # =========== WATCH ROUTES ===============
  resources :watches
 end
+
