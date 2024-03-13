@@ -1,0 +1,19 @@
+<h1>DASHBOARD</h1>
+<h3>Vos réservations</h3>
+<% @current_user_bookings.each do |booking| %>
+  <div class= "booking">
+    <p>Montre: <%= booking.watch.name %></p>
+    <p>Du: <%= booking.starting_date %></p>
+    <p>Au: <%= booking.ending_date %></p>
+    <p>Total:</p>
+  </div>
+<% end %>
+
+
+<h3>Vos montres en location</h3>
+<% @current_user_watches.each do |watch| %>
+  <div class= "watch">
+    <p>Montre: <%= watch.name %></p>
+    <p>rent periods: <%=  %></p>
+  </div>
+<% end %>
