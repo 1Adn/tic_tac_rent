@@ -1,0 +1,55 @@
+[1mdiff --git a/app/views/bookings/show.html.erb b/app/views/bookings/show.html.erb[m
+[1mindex 1f24db0..f095c37 100644[m
+[1m--- a/app/views/bookings/show.html.erb[m
+[1m+++ b/app/views/bookings/show.html.erb[m
+[36m@@ -1,31 +1,24 @@[m
+ <p id="notice"><%= notice %></p>[m
+[31m-[m
+ <h1>Reservation Details</h1>[m
+[31m-[m
+ <p>[m
+   <strong>Watch:</strong>[m
+   <%= @booking.watch.name %>[m
+ </p>[m
+[31m-[m
+ <p>[m
+   <strong>Renter:</strong>[m
+   <%= @booking.user.username %>[m
+ </p>[m
+[31m-[m
+ <p>[m
+   <strong>Starting Date:</strong>[m
+   <%= @booking.starting_date %>[m
+ </p>[m
+[31m-[m
+ <p>[m
+   <strong>Ending Date:</strong>[m
+   <%= @booking.ending_date %>[m
+ </p>[m
+[31m-[m
+ <p>[m
+   <strong>Status:</strong>[m
+   <%= @booking.status %>[m
+ </p>[m
+[31m-[m
+ <%= link_to 'Edit', edit_booking_path(@booking) %> |[m
+ <%= link_to 'Back to List', bookings_path %>[m
+[1mdiff --git a/app/views/watches/index.html.erb b/app/views/watches/index.html.erb[m
+[1mindex 3540ee2..09979ae 100644[m
+[1m--- a/app/views/watches/index.html.erb[m
+[1m+++ b/app/views/watches/index.html.erb[m
+[36m@@ -1,9 +1,10 @@[m
+ <h1>list of all the Watches :</h1>[m
+[31m-<ul>[m
+[32m+[m[32m<div class="container">[m
+   <% @watches.each do |watch| %>[m
+[31m-    <li> <%= link_to watch.name, watch_path(watch) %></li>[m
+[32m+[m[32m    <%= link_to watch.name, watch_path(watch) %>[m
+   <% end %>[m
+[31m-</ul>[m
+[32m+[m[32m</div>[m
+[32m+[m[32m<p>-------------------------------------</p>[m
+ <%= link_to new_watch_path(@watch), data: { turbo_confirm: "If you are not log in, you'll be redirected to the login page" } do %>[m
+[31m-  <div>You too post your watch !</div>[m
+[32m+[m[32m  <p>You too post your watch !</p>[m
+ <% end %>[m
