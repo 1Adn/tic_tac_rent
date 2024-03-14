@@ -1,11 +1,12 @@
 <div class="black-linear-bg black-linear-bg-watches-index ">
   <div class="container">
     <div class="banner">
+
       <h1>List of all the Watches:</h1>
     </div>
     <div class="text-center mt-4">
       <%= link_to new_watch_path(@watch), data: { turbo_confirm: "If you are not logged in, you'll be redirected to the login page" }, class: "btn btn rounded-pill" do %>
-        <div class="button-text">You too post your watch</div>
+        <div class="button-text-watches-index">You too post your watch</div>
       <% end %>
     </div>
     <div class="mt-4"></div>

@@ -1,30 +1,109 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>TicTacRent</title>
-  <%= stylesheet_link_tag 'application', 'data-turbo-track': 'reload' %>
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
-</head>
-<body>
+
 
   <!-- Contenu principal -->
   <div class="banner-image">
-  <div class="container-bannner text-center">
-    <h2>Discover Luxury Experience with Tic Tac Rent</h2>
-    <p>At Tic Tac Rent, we believe luxury should be accessible to everyone, anytime. Founded by three young visionaries, our company is on a mission to reinvent how you perceive and enjoy luxury watches.</p>
-    <h2>Luxury on Demand</h2>
-    <p>Imagine having access to an exclusive collection of luxury watches, right at your fingertips, without the need for a long-term commitment. With Tic Tac Rent, it's now possible. Our platform gives you the freedom to rent renowned watches for special occasions or simply to elevate your everyday style.</p>
-    <%= link_to 'Discover', "#", class: "btn btn-primary mt-3" %>
+    <div class="container-bannner text-center">
+      <div class="image-text">
+        <h2>Discover Luxury Experience with Tic Tac Rent</h2>
+        <p>At Tic Tac Rent, we believe luxury should be accessible to everyone, anytime. Founded by three young visionaries, our company is on a mission to reinvent how you perceive and enjoy luxury watches.</p>
+        <h2>Luxury on Demand</h2>
+        <p>Imagine having access to an exclusive collection of luxury watches, right at your fingertips, without the need for a long-term commitment. With Tic Tac Rent, it's now possible. Our platform gives you the freedom to rent renowned watches for special occasions or simply to elevate your everyday style.</p>
+        <%= link_to 'Discover', "#", class: "btn-home-page btn btn-primary mt-3" %>
+      </div>
+  </div>
+</div>
+
+<!-- Contenu How it works -->
+<div class="how-it-works-section">
+  <h2 class="works-text text-center">How it Works?</h2>
+
+  <div class="container-home-page">
+    <div class="card-deck">
+      <div class="card card-home-page">
+        <div class="card-image-placeholder-one"></div>
+        <div class="card-body card-body-home-page">
+          <h3>Explore our Collection</h3>
+          <p>Browse through our wide range of luxury watches available for rent. Discover prestigious brands and iconic models tailored to your style and needs.</p>
+          <%= link_to 'Our collection', "explore_path", class: "btn-cards btn btn-primary" %>
+        </div>
+      </div>
+
+      <div class="card card-home-page">
+        <div class="card-image-placeholder-two"></div>
+        <div class="card-body card-body-home-page">
+          <h3>Book your Watch</h3>
+          <p>Select the watch of your dreams from our diverse collection. Check availability and pricing details, then book your watch in just a few clicks. We'll confirm your booking and connect you with the owner to arrange pickup.</p>
+          <%= link_to 'Reserve', "book_path", class: "btn-cards btn btn-primary" %>
+        </div>
+      </div>
+
+      <div class="card card-home-page">
+        <div class="card-image-placeholder-three"></div>
+        <div class="card-body card-body-home-page">
+          <h3>Enjoy your Watch</h3>
+          <p>Once your booking is confirmed, head to the owner's location to pick up your watch. Wear it with elegance and at the end of the rental period, simply return the watch to the owner as per the agreed-upon instructions during booking.</p>
+          <%= link_to 'Assure', "enjoy_path", class: "btn-cards btn btn-primary" %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
   <!-- Pied de page -->
   <footer class="footer bg-dark text-light">
-    <div class="container">
-      <p>&copy; 2024 Tic Tac Rent</p>
-    </div>
-  </footer>
+  <div class="container py-5">
+    <div class="row">
+      <!-- Colonne Newsletter -->
+      <div class="col-md-3">
+        <h5>Newsletter</h5>
+        <p>Sign up now and get 10% off</p>
+        <input type="email" class="form-control" placeholder="Your e-mail adress">
+        <button type="submit" class="btn btn-primary mt-2">Suscribe</button>
+      </div>
 
-  <%= javascript_include_tag 'application', 'data-turbo-track': 'reload' %>
-</body>
+      <!-- Colonne Informations -->
+      <div class="col-md-3">
+        <h5>Informations</h5>
+        <ul>
+          <li>Tic Tac Rent</li>
+          <li>Avenue des Champs-Élysées</li>
+          <li>75 008 Paris</li>
+          <li>+33 (0)5 62 68 55 39</li>
+          <li>contact@tictacrent.com</li>
+        </ul>
+      </div>
+
+      <!-- Colonne Nos engagements -->
+      <div class="col-md-3">
+        <h5>Our commitments</h5>
+        <ul>
+          <li>Delivery</li>
+          <li>Secure payment</li>
+          <li>Warranty - After-sales service</li>
+          <li>Eco Tempo - Recycling</li>
+          <li>Exchange or refund</li>
+        </ul>
+      </div>
+
+      <!-- Colonne Notre société -->
+      <div class="col-md-3">
+        <h5>Our company</h5>
+        <ul>
+          <li>Legal notices</li>
+          <li>CGV</li>
+          <li>Privacy policy</li>
+          <li>Personal data</li>
+          <li>Contact us</li>
+          <li>Terms and conditions of use - Rental</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-12 text-center">
+        <!-- Ici, placez vos icônes de réseaux sociaux -->
+        <p>&copy; 2024 Tic Tac Rent</p>
+      </div>
+    </div>
+  </div>
+</footer>

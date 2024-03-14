@@ -36,19 +36,126 @@
 
 .banner-image {
   background: url('banner-home-page.png') no-repeat center center/cover;
-  padding: 100px 0; // Ajustez selon l'espacement souhaité
+  padding: 150px 0px; // Ajustez selon l'espacement souhaité
+  filter: brightness(100%);
+}
+
+.image-text {
   color: white; // Ou toute autre couleur selon votre design
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 200%;
+  transition: opacity 0.3s ease;
 }
 
-.container-banner h2,
-.container-banner p {
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); // Ajoute une ombre noire pour augmenter le contraste
+.btn-home-page {
+  /* Vos styles ici */
+  background: linear-gradient(to right, silver, gold);
+  border: none;
+  color: white;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.container-banner {
-  background-color: rgba(0, 0, 0, 1); // Ajoute un fond noir semi-transparent
-  display: inline-block; // Permet au conteneur de s'adapter au contenu
-  padding: 20px; // Un peu d'espacement autour du texte
-  border-radius: 10px; // Des bords arrondis pour l'esthétique
-  margin: auto; // Centrer le bloc dans la bannière
+.how-it-works-section {
+  background: linear-gradient(to bottom, #f2f2f4, #020202); // Couleur de fond jaune clair
+  padding: 2rem 0;
+}
+
+.works-text {
+  font-size: 2.5rem; // Augmente la taille du texte
+  color: #333; // Couleur foncée pour le texte
+  margin-bottom: 2rem; // Ajoute de l'espace en dessous du titre
+  padding-top: 1rem; // Ajoute de l'espace au-dessus du titre si nécessaire
+  font-weight: bold; // Rend le texte gras
+  text-transform: uppercase; // Mettre le texte en majuscules
+  letter-spacing: 1.5px; // Espacement des lettres pour un aspect plus raffiné
+}
+
+
+.card-deck {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 15%; // Ajustez selon la mise en page souhaitée
+}
+
+.card-home-page {
+  flex: 1; // Distribue l'espace uniformément
+  margin: 0 1rem; // Ajustez l'espacement entre les cartes
+  background-color: #ffef82; // Couleur de fond des cartes
+  border: none; // Supprime les bordures par défaut des cartes
+  position: relative;
+  min-width: 300px; // Largeur minimale pour les cartes
+  max-width: 450px; // Largeur maximale pour les cartes, ajustez selon vos besoins
+}
+
+
+.card-image-placeholder-one {
+  background: url(collection-watches-final.png);
+  width: 100%;
+  height: 150px; // Ajustez selon la hauteur souhaitée pour les images
+  background-color: #fff; // Fond blanc pour l'emplacement de l'image
+  margin-bottom: 0rem;
+}
+
+.card-image-placeholder-two {
+  background: url(book-a-date.png);
+  width: 100%;
+  height: 150px; // Ajustez selon la hauteur souhaitée pour les images
+  background-color: #fff; // Fond blanc pour l'emplacement de l'image
+  margin-bottom: 0rem;
+}
+
+.card-image-placeholder-three {
+  background: url(book-your-watch.png);
+  width: 100%;
+  height: 150px; // Ajustez selon la hauteur souhaitée pour les images
+  background-color: #fff; // Fond blanc pour l'emplacement de l'image
+  margin-bottom: 0rem;
+}
+
+.card-body-home-page {
+  padding-bottom: 3.5rem;
+}
+
+.card-home h3 {
+  color: #333; // Couleur du titre de la carte
+}
+
+.card-home p {
+  color: #666; // Couleur du texte
+  margin-bottom: 1rem;
+}
+
+.btn-cards {
+  background-color: #f0ad4e;
+  border-color: #f0ad4e;
+  width: 60%; /* Largeur du bouton en pourcentage pour une largeur responsive */
+  padding: 0.5rem 1rem; /* Padding vertical et horizontal pour ajuster la taille du bouton */
+  text-align: center;
+  display: inline-block; /* `inline-block` est généralement mieux que `block` pour les boutons */
+  margin: 0 auto; /* Centrage horizontal du bouton */
+  font-size: 1rem; /* Taille de la police ajustée */
+  border-radius: 0.25rem;
+  position: absolute; // Positionnez le bouton absolument pour le placer au bas de la carte
+  bottom: 1rem; // Distance du bouton par rapport au bas de la carte
+  left: 50%; // Place le bord gauche du bouton au milieu de la carte
+  transform: translateX(-50%); // Décale le bouton vers la gauche de 50% de sa propre largeur pour le centrer parfaitement
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: darken(#f0ad4e, 10%);
+    border-color: darken(#f0ad4e, 10%);
+  }
+}
+
+
+footer {
+  background: linear-gradient(to bottom,  #020202, #000000);
 }
