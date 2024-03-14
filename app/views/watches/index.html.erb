@@ -1,9 +1,35 @@
-<h1>list of all the Watches :</h1>
-<ul>
-  <% @watches.each do |watch| %>
-    <li> <%= link_to watch.name, watch_path(watch) %></li>
-  <% end %>
-</ul>
-<%= link_to new_watch_path(@watch), data: { turbo_confirm: "If you are not log in, you'll be redirected to the login page" } do %>
-  <div>You too post your watch !</div>
-<% end %>
+<div class="black-linear-bg">
+  <div class="container">
+    <div class="banner">
+      <h1>List of all the Watches:</h1>
+    </div>
+    <div class="text-center mt-4">
+      <%= link_to new_watch_path(@watch), data: { turbo_confirm: "If you are not logged in, you'll be redirected to the login page" }, class: "btn btn rounded-pill" do %>
+        <div class="button-text">You too post your watch</div>
+      <% end %>
+    </div>
+    <div class="mt-4"></div>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+      <% @watches.each do |watch| %>
+        <% watch_onwer = @users.find(watch.user_id) %>
+        <div class="col mb-4">
+          <div class="card h-100 border-0 rounded-lg shadow">
+            <% if watch.photo.attached? %>
+              <%= cl_image_tag watch.photo.key, class:"card-img-top rounded-3" %>
+            <% else %>
+              <img src="https://timekeeping.fr/cdn/shop/products/image_356e963a-0f3b-4223-a0f0-027c9dee3dc3_300x300.jpg?v=1647356887" class="card-img-top rounded-3">
+            <% end %>
+            <%# <img src="https://magazine.chrono24.com/cdn-cgi/image/f=auto,metadata=none,fit=cover,q=65,w=1190,h=595,dpr=2.0/2022/08/Omega-Speedmaster-6-Things-Magazin-2-1.jpg" class="card-img-top rounded-3"> %>
+            <div class="card-body">
+              <h5 class="card-title text-center mb-2"><%= link_to watch.name, watch_path(watch), class: "text-dark" %></h5>
+              <hr class="my-1">
+              <p class="card-text mb-1">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <hr class="my-1">
+              <p class="card-text mb-0"><small class="text-muted">Posted by <%= watch_onwer.username %></small></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
