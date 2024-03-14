@@ -1,7 +1,7 @@
-.black-linear-bg {
+.black-linear-bg-watches-index {
   background: linear-gradient(to bottom, #000000, #191c29);
 }
-.card-title {
+.card-title-watches-index {
   a {
     text-decoration: none;
     color: #000000;
@@ -24,11 +24,11 @@
   transform: scale(1.05);
 }
 
-.card {
+.card-watches-index{
   border-radius: 20px;
 }
 
-.card-title {
+.card-title-card-body-watches-index{
   margin-bottom: 0.5rem;
 }
 
@@ -39,6 +39,6 @@ hr {
   opacity: 0.85;
 }
 
-.card-body {
+.card-body-watches-index {
   padding: 20px;
 }
