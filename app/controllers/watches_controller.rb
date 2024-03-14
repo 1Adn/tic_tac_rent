@@ -3,6 +3,7 @@ class WatchesController < ApplicationController
 
   def index
     @watches = Watch.all
+    @users = User.all
   end
 
   def new
