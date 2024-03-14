@@ -1,7 +1,8 @@
-.black-linear-bg {
+.black-linear-bg-watches-index {
   background: linear-gradient(to bottom, #000000, #191c29);
 }
-.card-title {
+.card-title-watches-index {
+  margin-bottom: 0.5rem;
   a {
     text-decoration: none;
     color: #000000;
@@ -10,7 +11,7 @@
     color: #86641a;
   }
 }
-.button-text {
+.button-text-watches-index {
   background-color: black;
   padding: 10px 20px;
   border-radius: 20px;
@@ -20,17 +21,17 @@
   transition: transform 0.2s ease;
 }
 
-.button-text:hover {
+.button-text-watches-index:hover {
   transform: scale(1.05);
 }
 
-.card {
+.card-watches-index {
   border-radius: 20px;
 }
 
-.card-title {
-  margin-bottom: 0.5rem;
-}
+// .card-title-watches-index {
+//   margin-bottom: 0.5rem;
+// }
 
 hr {
   border-top: 2px solid rgba(0, 0, 0, 0.1);
@@ -39,6 +40,6 @@ hr {
   opacity: 0.85;
 }
 
-.card-body {
+.card-body-watches-index {
   padding: 20px;
 }
