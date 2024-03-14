@@ -1,0 +1,45 @@
+.black-linear-bg-watches-index {
+  background: linear-gradient(to bottom, #000000, #191c29);
+}
+.card-title-watches-index {
+  margin-bottom: 0.5rem;
+  a {
+    text-decoration: none;
+    color: #000000;
+  }
+  a:hover {
+    color: #86641a;
+  }
+}
+.button-text-watches-index {
+  background-color: black;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 0 0 2px #a95, 0 0 0 1px #fea, 0 0 0 1px #ffffff, 0 0 0 2px #dc8, 0 0 0 3px #fea, 0 0 0 4px #a95;
+  color: whitesmoke;
+  transition: transform 0.2s ease;
+}
+
+.button-text-watches-index:hover {
+  transform: scale(1.05);
+}
+
+.card-watches-index {
+  border-radius: 20px;
+}
+
+// .card-title-watches-index {
+//   margin-bottom: 0.5rem;
+// }
+
+hr {
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  opacity: 0.85;
+}
+
+.card-body-watches-index {
+  padding: 20px;
+}
