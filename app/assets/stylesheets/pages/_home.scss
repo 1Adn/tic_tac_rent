@@ -84,7 +84,7 @@
   margin: 0 15%; // Ajustez selon la mise en page souhaitée
 }
 
-.card {
+.card-home {
   flex: 1; // Distribue l'espace uniformément
   margin: 0 1rem; // Ajustez l'espacement entre les cartes
   background-color: #ffef82; // Couleur de fond des cartes
@@ -123,11 +123,11 @@
   padding-bottom: 3.5rem;
 }
 
-.card h3 {
+.card-home h3 {
   color: #333; // Couleur du titre de la carte
 }
 
-.card p {
+.card-home p {
   color: #666; // Couleur du texte
   margin-bottom: 1rem;
 }
