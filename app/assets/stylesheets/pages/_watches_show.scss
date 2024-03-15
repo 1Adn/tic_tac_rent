@@ -5,8 +5,15 @@
   text-align: center; /* Center align the text */
 }
 
+.banner-show-watch .container h1,
+.banner-show-watch .container h2{
+  border-bottom: 1px solid #ddd; /* Ajoute une bordure basse à chaque titre */
+  padding-bottom: 10px; /* Ajoute un espacement en dessous de chaque titre */
+}
+
 .watch-details-container {
   margin-top: 50px; /* Add space between the banner and the watch details */
+  margin-bottom : 50px;
   display: flex; /* Use flexbox for layout */
   justify-content: center; /* Center horizontally */
   align-items: flex-start; /* Align items at the top vertically */
@@ -16,11 +23,20 @@
 .container-show-watch {
   display: flex;
   justify-content: space-between;
+  max-width: 937px;
+}
+
+.card-img-top{
+  width: 100%; /* Pour que l'image occupe la largeur totale de son conteneur */
+  height: 420px; /* Pour conserver les proportions de l'image */
+  object-fit: cover; /* Pour ajuster la taille de l'image tout en conservant ses proportions */
+  border: 4px solid #ddd; /* Ajoute une bordure de 4px solide avec une couleur grise */
+  box-sizing: border-box; /* Inclut les bordures dans la largeur et la hauteur de l'élément */
+  padding: 10px; /* Ajoute un espacement intérieur de 10px autour de l'image */
 }
 
 .watch-show-image {
   flex: 0 0 50%; /* Take up half of the container width */
-  max-width: 50%; /* Limit image width */
 }
 
 .watch-show-info {
@@ -29,10 +45,35 @@
   padding: 0 20px; /* Add padding around the info */
 }
 
+.price-show-watch p {
+  border-top: 1px solid #000; /* Ajoute un séparateur en haut de la classe */
+  padding-top: 10px; /* Ajuste l'espacement entre le séparateur et le texte */
+  font-family: Roboto, sans-serif;
+  font-size: 22px;
+}
+
 .actions-show-watch {
+  display: flex; /* Afficher les boutons horizontalement */
+  justify-content: left;
   width: 100%; /* Full width for actions */
-  text-align: center; /* Center align the actions */
   margin-top: 20px; /* Add space above the actions */
+  border-bottom: 1px solid #000;
+  padding-bottom: 10px; /* Ajuste l'espacement entre le séparateur et le texte */
+
+}
+
+.btn-show-watch-one {
+  white-space: nowrap; /* Force le texte à rester sur une seule ligne */
+  background-color: #000000; /* Couleur principale de votre logo */
+  color: #E7BC69; /* Couleur secondaire de votre logo */
+  border: 2px solid #E7BC69; /* Bordure */
+  border-radius: 5px; /* Coins arrondis */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Animation de transition */
+}
+
+.btn-show-watch-one:hover {
+  background-color: #5F803F; /* Couleur de fond au survol */
+  color: #cf8d0a; /* Couleur du texte au survol */
 }
 
 /* Style for the buttons */
@@ -40,4 +81,5 @@
 .btn-show-watch-two {
   margin-right: 10px; /* Add space between the buttons */
   width: 150px; /* Set width of the buttons */
+  font-size: 16px; /* Adjusted font size */
 }
