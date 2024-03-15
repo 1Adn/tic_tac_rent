@@ -14,9 +14,11 @@
   // box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
 }
 
+
 .bookings-dashboard, .watches-dashboard  {
   background-color: #C5954D;
   margin: auto;
+  margin-top: 40px;
   border-radius: 5px;
   box-shadow: 0px 0px 25px 8px whitesmoke
 }
@@ -35,6 +37,13 @@
     color: black;
   }
 }
+
+.booking-dashboard-infos {
+  border: 1px solid #e0e0e0; /* Bordure grise */
+  border-radius: 8px; /* Coins arrondis */
+  padding: 20px; /* Espacement intérieur */
+  margin-bottom: 20px; /* Marge en bas pour séparer les cartes */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
 
 .container-dashboard span {
   color: #C5954D
