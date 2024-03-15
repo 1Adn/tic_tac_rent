@@ -5,24 +5,33 @@
 }
 
 .sidebar {
-  background-color: rgb(244, 183, 13);
+  background-color: black;
   width: fit-content;
   height: 100%;
+  color: #C5954D;
   // margin-left: 50px;
   // border-radius: 4px;
-  box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
+  // box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
 }
 
-.bookings-dashboard {
-  background-color: #F4B70E;
+.bookings-dashboard, .watches-dashboard  {
+  background-color: #C5954D;
   margin: auto;
   border-radius: 5px;
   box-shadow: 0px 0px 25px 8px whitesmoke
 }
 
-.watches-dashboard {
-  background-color: #F4B70E;
-  margin: auto;
-  border-radius: 5px;
-  box-shadow: 0px 0px 25px 8px whitesmoke
+.container-dashboard .btn {
+  background-color: black;
+  border: 1px solid #F8F9FA;
+  border-radius: 50px;
+  color: #C5954D;
+  font-weight: bold;
+  width: 215px;
+  vertical-align: middle;
+
+  &:hover {
+    background-color: #C5954D;
+    color: black;
+  }
 }
