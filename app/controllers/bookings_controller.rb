@@ -22,7 +22,7 @@ class BookingsController < ApplicationController
     @booking.user = @user
     @booking.status = "Pending"
     if @booking.save
-      redirect_to watch_path(@watch), notice: 'Booking was successfully created.'
+      redirect_to watch_path(@watch), notice: '✅ Booking was successfully created.'
     else
       render :new, status: unprocessable_entity
     end

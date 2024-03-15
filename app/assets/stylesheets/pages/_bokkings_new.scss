@@ -1,0 +1,22 @@
+.reservation-form-container {
+  max-width: 500px; /* Largeur maximale du conteneur */
+  margin: 0 auto; /* Centrage horizontal */
+  padding: 20px; /* Espacement intérieur */
+  border: 2px solid #ccc; /* Bordure grise */
+  border-radius: 10px; /* Coins arrondis */
+  background-color: #f9f9f9; /* Couleur de fond */
+}
+
+.reservation-form-container h1 {
+  font-size: 24px; /* Taille de police pour le titre */
+  margin-bottom: 20px; /* Espacement en bas du titre */
+}
+
+.reservation-form-container input[type="text"],
+.reservation-form-container input[type="date"] {
+  width: 100%; /* Largeur totale des champs de texte */
+  padding: 10px; /* Espacement intérieur des champs de texte */
+  margin-bottom: 15px; /* Espacement en bas des champs de texte */
+  border: 1px solid #ccc; /* Bordure grise pour les champs de texte */
+  border-radius: 5px; /* Coins arrondis pour les champs de texte */
+}
