@@ -1,7 +1,18 @@
+.container-dashboard {
+  background-color: black;
+  height: 100vh;
+
+}
 
 .sidebar {
   background-color: rgb(244, 183, 13);
   width: fit-content;
-  border-radius: 4px;
+  height: 100%;
+  // margin-left: 50px;
+  // border-radius: 4px;
   box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
+}
+
+.bookings {
+  background-color: antiquewhite;
 }
