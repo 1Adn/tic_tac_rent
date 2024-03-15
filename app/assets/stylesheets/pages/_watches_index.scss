@@ -1,6 +1,7 @@
 .black-linear-bg-watches-index {
   background: linear-gradient(to bottom, #000000, #191c29);
 }
+
 .card-title-watches-index {
   margin-bottom: 0.5rem;
   a {
@@ -11,6 +12,7 @@
     color: #86641a;
   }
 }
+
 .button-text-watches-index {
   background-color: black;
   padding: 10px 20px;
@@ -25,27 +27,31 @@
   transform: scale(1.05);
 }
 
-.card-watches-index{
+.card-watches-index {
   border-radius: 20px;
+  overflow: hidden; /* Empêche les images de déborder des cartes */
 }
 
-.card-title-card-body-watches-index{
+.card-img-top {
+  width: 100%; /* Pour que les images remplissent complètement leur conteneur */
+  height: 200px; /* Définissez la hauteur désirée pour toutes les images */
+  object-fit: cover; /* Pour s'assurer que les images conservent leur ratio d'aspect */
+}
+
+.card-body-watches-index {
+  padding: 20px;
+  height: 100%; /* Pour que toutes les cartes aient la même hauteur */
+}
+
+.card-title-card-body-watches-index {
   margin-bottom: 0.5rem;
 }
-
-// .card-title-watches-index {
-//   margin-bottom: 0.5rem;
-// }
 
 hr {
   border-top: 2px solid rgba(0, 0, 0, 0.1);
   margin-top: 0.5rem;
   margin-bottom: 1rem;
   opacity: 0.85;
-}
-
-.card-body-watches-index {
-  padding: 20px;
 }
 
 .price-watches-index {
