@@ -9,7 +9,7 @@
   <div class="container-show-watch container">
     <div class="watch-show-image">
       <% if @watch.photo.attached? %>
-        <%= cl_image_tag watch.photo.key, class:"card-img-top rounded-3" %>
+        <%= cl_image_tag @watch.photo.key, class:"card-img-top rounded-3" %>
       <% else %>
         <img src="<%= @watch.image_url %>" class="card-img-top rounded-3">
       <% end %>
