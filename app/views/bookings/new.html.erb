@@ -1,6 +1,8 @@
-<h1>Create your reservation for <%= @watch.name%></h1>
-<%= simple_form_for([@watch, @booking]) do |f| %>
-  <%= f.input :starting_date %>
-  <%= f.input :ending_date %>
-  <%= f.submit %>
-<% end %>
+<div class="reservation-form-container">
+  <h1>Create your reservation for <strong><%= @watch.name %></strong></h1>
+  <%= simple_form_for([@watch, @booking]) do |f| %>
+    <%= f.input :starting_date, label: 'Starting Date' %>
+    <%= f.input :ending_date, label: 'Ending Date' %>
+    <%= f.submit 'Submit Reservation', class: 'btn-submit-reservation' %>
+  <% end %>
+</div>
