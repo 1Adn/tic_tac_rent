@@ -14,9 +14,6 @@
             <div class="collapse show" id="home-collapse">
               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small d-none">
                 <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">En cours</a>
-
-
-
                 </li>
                 <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Historique</a></li>
               </ul>
@@ -29,9 +26,6 @@
             <div class="collapse" id="dashboard-collapse">
               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small d-none" data-toggle-target="toggleUl">
                 <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">En cours</a>
-
-
-
                 </li>
                 <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Historique</a></li>
               </ul>
@@ -68,32 +62,23 @@
       </div>
     </div>
     <div class="bookings-dashboard col-8 justify-content-center d-none" data-toggle-target="togglableElement">
-
-                  <% @current_user_bookings.each do |booking| %>
-                    <div class= "booking-dashboard-infos">
-                      <p>Montre: <%= booking.watch.name %></p>
-                      <p>Du: <%= booking.starting_date %></p>
-                      <p>Au: <%= booking.ending_date %></p>
-                      <p>Total:</p>
-                    </div>
-                  <% end %>
+      <% @current_user_bookings.each do |booking| %>
+        <div class= "booking-dashboard-infos">
+          <p>Montre: <%= booking.watch.name %></p>
+          <p>Du: <%= booking.starting_date %></p>
+          <p>Au: <%= booking.ending_date %></p>
+          <p>Total:</p>
+        </div>
+      <% end %>
     </div>
     <div class="watches-dashboard col-8 justify-content-center d-none" data-toggle-target="togglableWatches">
       <p>Mes montres</p>
       <% @current_user_watches.each do |watch| %>
-                    <div class= "watch">
-                      <p>Montre: <%= watch.name %></p>
-                      <p>rent periods: <%=  %></p>
-                    </div>
-                  <% end %>
+        <div class= "watch">
+          <p>Montre: <%= watch.name %></p>
+          <p>rent periods: <%=  %></p>
+        </div>
+      <% end %>
     </div>
-
-
-
-
-
-
-
-
   </div>
 </div>

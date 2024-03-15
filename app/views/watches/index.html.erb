@@ -1,4 +1,4 @@
-<div class="black-linear-bg black-linear-bg-watches-index ">
+<div class="black-linear-bg black-linear-bg-watches-index">
   <div class="container">
     <div class="banner">
       <h1>List of all the Watches:</h1>
@@ -11,26 +11,27 @@
     <div class="mt-4"></div>
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
       <% @watches.each do |watch| %>
-        <% watch_onwer = @users.find(watch.user_id) %>
+        <% watch_owner = @users.find(watch.user_id) %>
         <div class="col mb-4">
-          <div class="card card-watches-index h-100 border-0 rounded-lg shadow">
-            <% if watch.photo.attached? %>
-              <%= cl_image_tag watch.photo.key, class:"card-img-top-watches-index  rounded-3" %>
-            <% else %>
-              <img src="<%= watch.image_url %>" class="card-img-top-watches-index  rounded-3">
-            <% end %>
-            <%# <img src="https://magazine.chrono24.com/cdn-cgi/image/f=auto,metadata=none,fit=cover,q=65,w=1190,h=595,dpr=2.0/2022/08/Omega-Speedmaster-6-Things-Magazin-2-1.jpg" class="card-img-top rounded-3"> %>
-            <div class="card-body card-body-watches-index">
-              <h5 class="card-title card-title-watches-index text-center mb-2"><%= link_to watch.name, watch_path(watch), class: "text-dark" %></h5>
-              <hr class="my-1">
-              <p class="card-text mb-1"><%= watch.description %></p>
-              <hr class="my-1">
-              <div class="d-flex justify-content-between">
-                <p class="card-text"><small class="text-muted">Posted by <%= watch_onwer.username %></small></p>
-                <p class="price-watches-index"><%= watch.price %> $ / day</p>
+          <%= link_to watch_path(watch), class: "text-decoration-none" do %>
+            <div class="card card-watches-index h-100 border-0 rounded-lg shadow">
+              <% if watch.photo.attached? %>
+                <%= cl_image_tag watch.photo.key, class:"card-img-top-watches-index rounded-3" %>
+              <% else %>
+                <img src="<%= watch.image_url %>" class="card-img-top-watches-index rounded-3">
+              <% end %>
+              <div class="card-body card-body-watches-index">
+                <h5 class="card-title card-title-watches-index text-center mb-2"><%= watch.name %></h5>
+                <hr class="my-1">
+                <p class="card-text mb-1"><%= watch.description %></p>
+                <hr class="my-1">
+                <div class="d-flex justify-content-between">
+                  <p class="card-text"><small class="text-muted">Posted by <%= watch_owner.username %></small></p>
+                  <p class="price-watches-index"><%= watch.price %> $ / day</p>
+                </div>
               </div>
             </div>
-          </div>
+          <% end %>
         </div>
       <% end %>
     </div>
