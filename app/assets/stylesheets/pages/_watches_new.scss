@@ -1,0 +1,64 @@
+
+.container-watches-new {
+  background: linear-gradient(to bottom, #000000, rgb(66, 66, 66));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card-watches-new {
+  margin: 20px 0;
+  background-color: #000000;
+  width: 80vh;
+  color: #C5954D;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0 2px #a95, 0 0 0 1px #fea, 0 0 0 1px #ffffff, 0 0 0 2px #dc8, 0 0 0 3px #fea, 0 0 0 4px #a95;
+}
+
+input[type='text'],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #C5954D;
+  border-radius: 5px;
+  background-color: #000000;
+  color:#C5954D;
+}
+
+input[type='submit'] {
+  background-color: #C5954D;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type='submit']:hover {
+  background-color: #c7a500;
+}
+
+.back-link-watches-new {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.btn-watches-new {
+  background-color: #C5954D;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-watches-new:hover {
+  background-color: #c7a500;
+}
