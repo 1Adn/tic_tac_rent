@@ -5,111 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
   <body>
-  <div class="announcement-bar">
-  Discover elegance on your wrist - Rent a luxury watch now!
-</div>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <!-- Liens en haut à gauche -->
-    <%= link_to 'Offer Your Watch', new_watch_path, class: 'offer-watch-link position-absolute top-0 start-0 ms-5 mt-2' %>
-    <!-- Logo au centre -->
-    <div class="mx-auto my-2">
-      <%= link_to root_path do %>
-        <%= image_tag('logo-final-tic-tac-rent.png', alt: 'Tic Tac Rent Logo', class: 'logo-container d-block mx-auto') %>
-      <% end %>
-      <!-- Liens en dessous du logo -->
-      <div class="nav-link-container d-flex justify-content-center mt-2">
-        <%= link_to 'Watches', watches_path, class: 'nav-link' %>
-        <%= link_to 'Dashboard', user_dashboard_path, class: 'nav-link' %>
-        <%= link_to 'Brands', "brands_path", class: 'nav-link' %>
+    <div class="announcement-bar">
+      Discover elegance on your wrist - Rent a luxury watch now!
+    </div>
+    <nav class="bg-black-navbar navbar navbar-expand-lg navbar-light bg-light">
+      <div class="bg-black-navbar container-fluid">
+        <!-- Liens en haut à gauche -->
+        <%= link_to 'Offer Your Watch', new_watch_path, class: 'button-text-watches-index position-absolute top-0 start-0 ms-5 mt-2' %>
+        <!-- Logo au centre -->
+        <div class="mx-auto my-2">
+          <%= link_to root_path do %>
+            <%= image_tag('logo-final-tic-tac-rent.png', alt: 'Tic Tac Rent Logo', class: 'logo-container d-block mx-auto') %>
+          <% end %>
+          <!-- Liens en dessous du logo -->
+          <div class="nav-link-container d-flex justify-content-center mt-2">
+            <%= link_to 'Watches', watches_path, class: 'nav-link nav-link-style' %>
+            <%= link_to 'Dashboard', user_dashboard_path, class: 'nav-link nav-link-style' %>
+            <%= link_to 'Brands', "brands_path", class: 'nav-link nav-link-style' %>
+          </div>
+        </div>
+        <!-- Liens en haut à droite -->
+        <div class="d-flex justify-content-between nav-link position-absolute top-0 end-0 me-5 mt-2">
+          <% if user_signed_in? %>
+            <%= link_to "Log Out", destroy_user_session_path, turbo_method: :delete, class: 'nav-link nav-link-style' %>
+          <% else %>
+            <%= link_to 'Sign In', user_session_path, class: 'nav-link nav-link-style mr-5' %>
+            <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link nav-link-style mr-5' %>
+          <% end %>
+        </div>
+        <!-- Barre de recherche et panier en bas -->
+        <div class="search-container position-absolute bottom-0 start-0 mb-3 ms-5">
+          <%= form_with url: "search_path", method: :get, class: 'd-flex' do |form| %>
+            <%= form.search_field :q, class: 'form-control me-2', placeholder: 'Recherche...' %>
+            <%= form.submit 'Search', class: 'btn btn-outline-success' %>
+          <% end %>
+          <%= link_to "cart_path" do %>
+            <i class="bi bi-cart3"></i>
+          <% end %>
+        </div>
       </div>
-    </div>
-    <!-- Liens en haut à droite -->
-    <div class="nav-link position-absolute top-0 end-0 me-5 mt-2">
-      <%= link_to 'Sign In', user_session_path, class: 'nav-link' %>
-      <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %>
-      <%= link_to "log_out", destroy_user_session_path, turbo_method: :delete %>
-
-    </div>
-    <!-- Barre de recherche et panier en bas -->
-    <div class="search-container position-absolute bottom-0 start-0 mb-3 ms-5">
-      <%= form_with url: "search_path", method: :get, class: 'd-flex' do |form| %>
-        <%= form.search_field :q, class: 'form-control me-2', placeholder: 'Recherche...' %>
-        <%= form.submit 'Search', class: 'btn btn-outline-success' %>
-      <% end %>
-      <%= link_to "cart_path" do %>
-        <i class="bi bi-cart3"></i>
-      <% end %>
-    </div>
-  </div>
-</nav>
+    </nav>
     <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
     <!-- Pied de page -->
-  <footer class="footer bg-dark text-light">
-  <div class="container py-5">
-    <div class="row">
-      <!-- Colonne Newsletter -->
-      <div class="col-md-3">
-        <h5>Newsletter</h5>
-        <p>Sign up now and get 10% off</p>
-        <input type="email" class="form-control" placeholder="Your e-mail adress">
-        <button type="submit" class="btn btn-primary mt-2">Suscribe</button>
+    <footer class="footer bg-dark text-light">
+      <div class="container py-5">
+        <div class="row">
+          <!-- Colonne Newsletter -->
+          <div class="col-md-3">
+            <h5>Newsletter</h5>
+            <p>Sign up now and get 10% off</p>
+            <input type="email" class="form-control" placeholder="Your e-mail adress">
+            <button type="submit" class="btn btn-primary mt-2">Suscribe</button>
+          </div>
+          <!-- Colonne Informations -->
+          <div class="col-md-3">
+            <h5>Informations</h5>
+            <ul>
+              <li>Tic Tac Rent</li>
+              <li>Avenue des Champs-Élysées</li>
+              <li>75 008 Paris</li>
+              <li>+33 (0)5 62 68 55 39</li>
+              <li>contact@tictacrent.com</li>
+            </ul>
+          </div>
+          <!-- Colonne Nos engagements -->
+          <div class="col-md-3">
+            <h5>Our commitments</h5>
+            <ul>
+              <li>Delivery</li>
+              <li>Secure payment</li>
+              <li>Warranty - After-sales service</li>
+              <li>Eco Tempo - Recycling</li>
+              <li>Exchange or refund</li>
+            </ul>
+          </div>
+          <!-- Colonne Notre société -->
+          <div class="col-md-3">
+            <h5>Our company</h5>
+            <ul>
+              <li>Legal notices</li>
+              <li>CGV</li>
+              <li>Privacy policy</li>
+              <li>Personal data</li>
+              <li>Contact us</li>
+              <li>Terms and conditions of use - Rental</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-12 text-center">
+            <!-- Ici, placez vos icônes de réseaux sociaux -->
+            <p>&copy; 2024 Tic Tac Rent</p>
+          </div>
+        </div>
       </div>
-
-      <!-- Colonne Informations -->
-      <div class="col-md-3">
-        <h5>Informations</h5>
-        <ul>
-          <li>Tic Tac Rent</li>
-          <li>Avenue des Champs-Élysées</li>
-          <li>75 008 Paris</li>
-          <li>+33 (0)5 62 68 55 39</li>
-          <li>contact@tictacrent.com</li>
-        </ul>
-      </div>
-
-      <!-- Colonne Nos engagements -->
-      <div class="col-md-3">
-        <h5>Our commitments</h5>
-        <ul>
-          <li>Delivery</li>
-          <li>Secure payment</li>
-          <li>Warranty - After-sales service</li>
-          <li>Eco Tempo - Recycling</li>
-          <li>Exchange or refund</li>
-        </ul>
-      </div>
-
-      <!-- Colonne Notre société -->
-      <div class="col-md-3">
-        <h5>Our company</h5>
-        <ul>
-          <li>Legal notices</li>
-          <li>CGV</li>
-          <li>Privacy policy</li>
-          <li>Personal data</li>
-          <li>Contact us</li>
-          <li>Terms and conditions of use - Rental</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="row mt-4">
-      <div class="col-12 text-center">
-        <!-- Ici, placez vos icônes de réseaux sociaux -->
-        <p>&copy; 2024 Tic Tac Rent</p>
-      </div>
-    </div>
-  </div>
-</footer>
+    </footer>
   </body>
 </html>

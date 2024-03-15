@@ -14,6 +14,7 @@
 }
 
 .button-text-watches-index {
+  text-decoration: none;
   background-color: black;
   padding: 10px 20px;
   border-radius: 20px;
@@ -29,18 +30,18 @@
 
 .card-watches-index {
   border-radius: 20px;
-  overflow: hidden; /* Empêche les images de déborder des cartes */
+  overflow: hidden;
 }
 
 .card-img-top {
-  width: 100%; /* Pour que les images remplissent complètement leur conteneur */
-  height: 200px; /* Définissez la hauteur désirée pour toutes les images */
-  object-fit: cover; /* Pour s'assurer que les images conservent leur ratio d'aspect */
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
 .card-body-watches-index {
   padding: 20px;
-  height: 100%; /* Pour que toutes les cartes aient la même hauteur */
+  height: 100%;
 }
 
 .card-title-card-body-watches-index {
