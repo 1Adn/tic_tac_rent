@@ -17,18 +17,17 @@
             <% if watch.photo.attached? %>
               <%= cl_image_tag watch.photo.key, class:"card-img-top rounded-3" %>
             <% else %>
-              <% random_image = @random_images.sample %>
-              <img src="<%= random_image %>" class="card-img-top rounded-3">
+              <img src="<%= watch.image_url %>" class="card-img-top rounded-3">
             <% end %>
             <%# <img src="https://magazine.chrono24.com/cdn-cgi/image/f=auto,metadata=none,fit=cover,q=65,w=1190,h=595,dpr=2.0/2022/08/Omega-Speedmaster-6-Things-Magazin-2-1.jpg" class="card-img-top rounded-3"> %>
             <div class="card-body card-body-watches-index">
               <h5 class="card-title card-title-watches-index text-center mb-2"><%= link_to watch.name, watch_path(watch), class: "text-dark" %></h5>
               <hr class="my-1">
-              <p class="card-text mb-1">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text mb-1"><%= watch.description %></p>
               <hr class="my-1">
               <div class="d-flex justify-content-between">
                 <p class="card-text"><small class="text-muted">Posted by <%= watch_onwer.username %></small></p>
-                <p><%= watch.price %> $ / day</p>
+                <p class="price-watches-index"><%= watch.price %> $ / day</p>
               </div>
             </div>
           </div>
