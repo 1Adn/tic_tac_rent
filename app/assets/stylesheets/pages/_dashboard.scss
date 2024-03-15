@@ -23,7 +23,7 @@
 
 .container-dashboard .btn {
   background-color: black;
-  border: 1px solid #F8F9FA;
+  border: 2px solid #C5954D;
   border-radius: 50px;
   color: #C5954D;
   font-weight: bold;
@@ -34,4 +34,8 @@
     background-color: #C5954D;
     color: black;
   }
+}
+
+.container-dashboard span {
+  color: #C5954D
 }
