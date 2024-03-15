@@ -1,0 +1,43 @@
+.banner-show-watch {
+  background-color: black; /* Background color for the banner */
+  color: white; /* Text color for the banner */
+  padding: 50px 0; /* Adjust padding as needed */
+  text-align: center; /* Center align the text */
+}
+
+.watch-details-container {
+  margin-top: 50px; /* Add space between the banner and the watch details */
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center horizontally */
+  align-items: flex-start; /* Align items at the top vertically */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+}
+
+.container-show-watch {
+  display: flex;
+  justify-content: space-between;
+}
+
+.watch-show-image {
+  flex: 0 0 50%; /* Take up half of the container width */
+  max-width: 50%; /* Limit image width */
+}
+
+.watch-show-info {
+  flex: 0 0 50%; /* Take up half of the container width */
+  max-width: 50%; /* Limit info width */
+  padding: 0 20px; /* Add padding around the info */
+}
+
+.actions-show-watch {
+  width: 100%; /* Full width for actions */
+  text-align: center; /* Center align the actions */
+  margin-top: 20px; /* Add space above the actions */
+}
+
+/* Style for the buttons */
+.btn-show-watch-one,
+.btn-show-watch-two {
+  margin-right: 10px; /* Add space between the buttons */
+  width: 150px; /* Set width of the buttons */
+}
