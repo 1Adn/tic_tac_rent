@@ -15,14 +15,7 @@
               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small d-none">
                 <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">En cours</a>
 
-                  <% @current_user_bookings.each do |booking| %>
-                    <div class= "booking">
-                      <p>Montre: <%= booking.watch.name %></p>
-                      <p>Du: <%= booking.starting_date %></p>
-                      <p>Au: <%= booking.ending_date %></p>
-                      <p>Total:</p>
-                    </div>
-                  <% end %>
+
 
                 </li>
                 <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Historique</a></li>
@@ -30,7 +23,7 @@
             </div>
           </li>
           <li class="mb-1">
-            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false" data-action="click->toggle#showWatches">
               Vos montres en location
             </button>
             <div class="collapse" id="dashboard-collapse">
@@ -45,7 +38,7 @@
             </div>
           </li>
           <li class="mb-1">
-            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+            <button class="btn btn-warning border-2 rounded" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
               Un onglet inutile
             </button>
             <div class="collapse" id="orders-collapse">
@@ -74,7 +67,19 @@
         </ul>
       </div>
     </div>
-    <div class="bookings col-8 justify-content-center d-none" data-toggle-target="togglableElement">
+    <div class="bookings-dashboard col-8 justify-content-center d-none" data-toggle-target="togglableElement">
+
+                  <% @current_user_bookings.each do |booking| %>
+                    <div class= "booking-dashboard-infos">
+                      <p>Montre: <%= booking.watch.name %></p>
+                      <p>Du: <%= booking.starting_date %></p>
+                      <p>Au: <%= booking.ending_date %></p>
+                      <p>Total:</p>
+                    </div>
+                  <% end %>
+    </div>
+    <div class="watches-dashboard col-8 justify-content-center d-none" data-toggle-target="togglableWatches">
+      <p>Mes montres</p>
       <% @current_user_watches.each do |watch| %>
                     <div class= "watch">
                       <p>Montre: <%= watch.name %></p>
@@ -82,10 +87,6 @@
                     </div>
                   <% end %>
     </div>
-    <%# <div class="watches">
-
-
-    </div> %>
 
 
 
