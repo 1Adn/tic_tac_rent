@@ -15,9 +15,9 @@
         <div class="col mb-4">
           <div class="card card-watches-index h-100 border-0 rounded-lg shadow">
             <% if watch.photo.attached? %>
-              <%= cl_image_tag watch.photo.key, class:"card-img-top rounded-3" %>
+              <%= cl_image_tag watch.photo.key, class:"card-img-top-watches-index  rounded-3" %>
             <% else %>
-              <img src="<%= watch.image_url %>" class="card-img-top rounded-3">
+              <img src="<%= watch.image_url %>" class="card-img-top-watches-index  rounded-3">
             <% end %>
             <%# <img src="https://magazine.chrono24.com/cdn-cgi/image/f=auto,metadata=none,fit=cover,q=65,w=1190,h=595,dpr=2.0/2022/08/Omega-Speedmaster-6-Things-Magazin-2-1.jpg" class="card-img-top rounded-3"> %>
             <div class="card-body card-body-watches-index">
