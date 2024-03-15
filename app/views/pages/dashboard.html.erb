@@ -1,45 +1,39 @@
 <div class="container-dashboard" data-controller="toggle">
   <div class="row">
     <div class="sidebar col-4 justify-content-start">
-      <div class="flex-shrink-0 p-3" style="width: 280px;>
+      <div class="flex-shrink-0 p-3" style="width: 280px";>
         <a href="/" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
           <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
           <span class="fs-5 fw-semibold">DASHBOARD</span>
         </a>
         <ul class="list-unstyled ps-0">
           <li class="mb-1">
-            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true" data-action="click->toggle#showContent">
-              Vos réservations
+            <button class="btn btn-warning" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true" data-action="click->toggle#showContent">
+              Your bookings
             </button>
             <div class="collapse show" id="home-collapse">
               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small d-none">
                 <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">En cours</a>
-
-
-
                 </li>
                 <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Historique</a></li>
               </ul>
             </div>
           </li>
           <li class="mb-1">
-            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false" data-action="click->toggle#showWatches">
-              Vos montres en location
+            <button class="btn btn-warning" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false" data-action="click->toggle#showWatches">
+              Your watches
             </button>
             <div class="collapse" id="dashboard-collapse">
               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small d-none" data-toggle-target="toggleUl">
                 <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">En cours</a>
-
-
-
                 </li>
                 <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Historique</a></li>
               </ul>
             </div>
           </li>
           <li class="mb-1">
-            <button class="btn btn-warning border-2 rounded" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-              Un onglet inutile
+            <button class="btn btn-warning" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+              Requests
             </button>
             <div class="collapse" id="orders-collapse">
               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
@@ -50,10 +44,10 @@
               </ul>
             </div>
           </li>
-          <li class="border-top my-3"></li>
+          <%# <li class="border-top my-3"></li> %>
           <li class="mb-1">
-            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-              Et un autre...
+            <button class="btn btn-warning" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+              another one...
             </button>
             <div class="collapse" id="account-collapse">
               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
@@ -68,32 +62,40 @@
       </div>
     </div>
     <div class="bookings-dashboard col-8 justify-content-center d-none" data-toggle-target="togglableElement">
-
-                  <% @current_user_bookings.each do |booking| %>
-                    <div class= "booking-dashboard-infos">
-                      <p>Montre: <%= booking.watch.name %></p>
-                      <p>Du: <%= booking.starting_date %></p>
-                      <p>Au: <%= booking.ending_date %></p>
-                      <p>Total:</p>
-                    </div>
-                  <% end %>
+      <% @current_user_bookings.each do |booking| %>
+        <div class= "booking-dashboard-infos">
+          <p>Montre: <%= booking.watch.name %></p>
+          <p>Du: <%= booking.starting_date %></p>
+          <p>Au: <%= booking.ending_date %></p>
+          <p>Total:</p>
+        </div>
+      <% end %>
     </div>
     <div class="watches-dashboard col-8 justify-content-center d-none" data-toggle-target="togglableWatches">
       <p>Mes montres</p>
-      <% @current_user_watches.each do |watch| %>
-                    <div class= "watch">
-                      <p>Montre: <%= watch.name %></p>
-                      <p>rent periods: <%=  %></p>
-                    </div>
-                  <% end %>
+      <ul>
+        <% @current_user_watches.each do |watch| %>
+          <li>
+            <div class= "watch">
+              <p>Montre: <%= watch.name %></p>
+              <p>rent periods: <%=  %></p>
+            </div>
+            <ul>
+              <% if watch.bookings == [] %>
+                <p><strong>No reservation for this watch 😿</strong></p>
+              <% else %>
+                <% watch.bookings.each do |booking|%>
+                  <li>
+                    <p><%= booking.user.username %></p>
+                  </li>
+                <% end %>
+              </ul>
+              <% end %>
+          </li>
+        <% end %>
+      </ul>
     </div>
-
-
-
-
-
-
-
-
+    <div class="requests">
+    </div>
   </div>
 </div>
